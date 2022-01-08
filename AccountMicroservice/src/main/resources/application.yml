@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:account_tx_db
+    driverClassName: org.h2.Driver
+    username: ${DB_USER:sa}
+    password: ${DB_PWD:password}
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  jackson:
+    default-property-inclusion: non-empty
+
+springdoc:
+  default-produces-media-type: application/json
+  swagger-ui:
+    disable-swagger-default-url: true
+
+server:
+  port: ${PORT:8080}
+
+service:
+  transaction:
+    timeout: 3 # seconds
+
+logging:
+  level:
+    root: ${LOGGING_LEVEL_ROOT:info}
+    
+    
+    
+    
+   
+#    spring:
+#  kafka:
+#    consumer:
+#      bootstrap-servers: localhost:9092
+#      group-id: group_id
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    producer:
+#      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
