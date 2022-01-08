@@ -26,7 +26,7 @@ CMD ["./mvnw", "spring-boot:run", "-Dspring-boot.run.profiles=dev"]
 
 FROM base as build
 #RUN --mount=type=cache,target=/root/.m2/repository
-RUN ./mvnw package && mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
+#RUN ./mvnw package && mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 
 FROM openjdk:11.0.4-jre-slim-buster as production
