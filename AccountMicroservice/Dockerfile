@@ -43,7 +43,7 @@ COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-cp", "app:app/lib/*", "com.demo.account.AccountServiceApplication"]
+ENTRYPOINT ["java", "com.demo.account.AccountServiceApplication"]
 
 
 
