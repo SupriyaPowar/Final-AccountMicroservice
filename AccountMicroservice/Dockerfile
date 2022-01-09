@@ -9,7 +9,7 @@ WORKDIR /app
 
 #Copy the build scripts (maven and pom.xml)
 COPY mvnw 
-COPY mvnw pom.xml ./
+COPY pom.xml ./
 COPY .mvn/ .mvn
 
 #RUN the maven dependency plugin
