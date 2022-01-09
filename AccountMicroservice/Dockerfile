@@ -8,15 +8,15 @@ FROM openjdk:16-alpine3.13 as base
 WORKDIR /app
 
 #Copy the build scripts (maven and pom.xml)
-COPY mvnw .
-COPY pom.xml .
-COPY .mvn .mvn
+COPY mvnw /
+COPY pom.xml /
+COPY .mvn .mvn /
 
 #RUN the maven dependency plugin
 RUN chmod +x ./mvnw
 RUN ./mvnw -B dependency:go-offline
 
-COPY src ./src
+COPY src ./src /
 
 FROM base as test
 CMD ["./mvnw", "test"]
