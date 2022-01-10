@@ -1,9 +1,8 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:account_tx_db
-    driverClassName: org.h2.Driver
-    username: ${DB_USER:sa}
-    password: ${DB_PWD:password}
+    url: jdbc:mysql://35.198.7.97/project_demo?useSSL=false
+    username: root
+    password: project
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     open-in-view: false
